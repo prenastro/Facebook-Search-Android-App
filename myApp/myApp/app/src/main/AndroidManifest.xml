@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.prena.myapp"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.prena.myapp.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.prena.myapp.TabbedActivity"
+            android:label="RESULTS"
+            android:parentActivityName="com.example.prena.myapp.MainActivity">
+            <meta_data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.prena.myapp.DetailsTabActivity"
+            android:label="MORE DETAILS"
+            android:parentActivityName="com.example.prena.myapp.TabbedActivity">
+            <meta_data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TabbedActivity" />
+        </activity>
+        <activity
+            android:name="com.example.prena.myapp.aboutMe"
+            android:label="ABOUT ME"
+            android:parentActivityName="com.example.prena.myapp.MainActivity">
+            <meta_data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="100135583850220" />
+        //to use login or share add this
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Share on FaceBook"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:replace="android:theme"></activity>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider100135583850220"
+            android:exported="true" />
+
+
+    </application>
+
+</manifest>

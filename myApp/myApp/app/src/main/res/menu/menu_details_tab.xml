@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.prena.myapp.DetailsTabActivity">
+    <item
+        android:id="@+id/action_fav"
+        android:orderInCategory="100"
+        android:title="Add to Favourites"
+        android:onClick="addToFav"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="Share"
+        android:onClick="shareToFB"
+        app:showAsAction="never" />
+</menu>
